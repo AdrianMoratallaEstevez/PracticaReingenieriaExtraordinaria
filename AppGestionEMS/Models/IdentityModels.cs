@@ -46,5 +46,7 @@ namespace AppGestionEMS.Models
         public System.Data.Entity.DbSet<AppGestionEMS.Models.Cursos> Cursos { get; set; }
 
         public System.Data.Entity.DbSet<AppGestionEMS.Models.Grupo> Grupoes { get; set; }
+
+        public System.Data.Entity.DbSet<AppGestionEMS.Models.AsignacionDocente> AsignacionDocentes { get; set; }
     }
 }
