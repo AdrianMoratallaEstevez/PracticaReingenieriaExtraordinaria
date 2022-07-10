@@ -173,6 +173,7 @@
     <Compile Include="Controllers\GruposController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MatriculasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -188,6 +189,10 @@
     <Compile Include="Migrations\202205211749134_AñadeAsignacionDocente.Designer.cs">
       <DependentUpon>202205211749134_AñadeAsignacionDocente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205211843241_AñadeMatricula.cs" />
+    <Compile Include="Migrations\202205211843241_AñadeMatricula.Designer.cs">
+      <DependentUpon>202205211843241_AñadeMatricula.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AsignacionDocente.cs" />
@@ -195,6 +200,7 @@
     <Compile Include="Models\Grupo.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Matriculas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -274,6 +280,11 @@
     <Content Include="Views\AsignacionDocentes\Details.cshtml" />
     <Content Include="Views\AsignacionDocentes\Edit.cshtml" />
     <Content Include="Views\AsignacionDocentes\Index.cshtml" />
+    <Content Include="Views\Matriculas\Create.cshtml" />
+    <Content Include="Views\Matriculas\Delete.cshtml" />
+    <Content Include="Views\Matriculas\Details.cshtml" />
+    <Content Include="Views\Matriculas\Edit.cshtml" />
+    <Content Include="Views\Matriculas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -300,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205211749134_AñadeAsignacionDocente.resx">
       <DependentUpon>202205211749134_AñadeAsignacionDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205211843241_AñadeMatricula.resx">
+      <DependentUpon>202205211843241_AñadeMatricula.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
