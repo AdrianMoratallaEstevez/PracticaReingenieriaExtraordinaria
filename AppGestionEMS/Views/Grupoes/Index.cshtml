@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AppGestionEMS.Models.Cursos>
+﻿@model IEnumerable<AppGestionEMS.Models.Grupo>
 
 @{
     ViewBag.Title = "Index";
@@ -12,7 +12,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Nombre)
+            @Html.DisplayNameFor(model => model.NombreGrupo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CursoId)
         </th>
         <th></th>
     </tr>
@@ -20,7 +23,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
+            @Html.DisplayFor(modelItem => item.NombreGrupo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CursoId)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
