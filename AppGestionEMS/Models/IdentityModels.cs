@@ -9,6 +9,7 @@ namespace AppGestionEMS.Models
     // Para agregar datos de perfil del usuario, agregue más propiedades a su clase ApplicationUser. Visite https://go.microsoft.com/fwlink/?LinkID=317594 para obtener más información.
     public class ApplicationUser : IdentityUser
     {
+        public System.Data.Entity.DbSet<AppGestionEMS.Models.Cursos> Cursos { get; set; }
 
         public virtual string Nombre
         {
@@ -40,5 +41,7 @@ namespace AppGestionEMS.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<AppGestionEMS.Models.Cursos> Cursos { get; set; }
     }
 }

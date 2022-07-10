@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -112,12 +118,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CursosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -177,8 +178,21 @@
     <Compile Include="Migrations\202205171720362_ModifyUsers.Designer.cs">
       <DependentUpon>202205171720362_ModifyUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205192022039_AñadeNombreCurso.cs" />
+    <Compile Include="Migrations\202205192022039_AñadeNombreCurso.Designer.cs">
+      <DependentUpon>202205192022039_AñadeNombreCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205201709556_AñadeCreadorCurso.cs" />
+    <Compile Include="Migrations\202205201709556_AñadeCreadorCurso.Designer.cs">
+      <DependentUpon>202205201709556_AñadeCreadorCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205201725053_AñadeCreadorCurso1.cs" />
+    <Compile Include="Migrations\202205201725053_AñadeCreadorCurso1.Designer.cs">
+      <DependentUpon>202205201725053_AñadeCreadorCurso1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Cursos.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -240,6 +254,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Cursos\Create.cshtml" />
+    <Content Include="Views\Cursos\Delete.cshtml" />
+    <Content Include="Views\Cursos\Details.cshtml" />
+    <Content Include="Views\Cursos\Edit.cshtml" />
+    <Content Include="Views\Cursos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -260,6 +279,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202205171720362_ModifyUsers.resx">
       <DependentUpon>202205171720362_ModifyUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205192022039_AñadeNombreCurso.resx">
+      <DependentUpon>202205192022039_AñadeNombreCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205201709556_AñadeCreadorCurso.resx">
+      <DependentUpon>202205201709556_AñadeCreadorCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205201725053_AñadeCreadorCurso1.resx">
+      <DependentUpon>202205201725053_AñadeCreadorCurso1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
