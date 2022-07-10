@@ -41,9 +41,14 @@ namespace AppGestionEMS.Controllers
         // GET: AsignacionDocentes/Create
         public ActionResult Create()
         {
+            var profes = from user in db.Users
+                         from u_r in user.Roles
+                         join rol in db.Roles on u_r.RoleId equals rol.Id
+                         where rol.Name == "profesor"
+                         select user.UserName;
             ViewBag.CursoId = new SelectList(db.Cursos, "Id", "Nombre");
             ViewBag.GrupoId = new SelectList(db.Grupoes, "Id", "NombreGrupo");
-            ViewBag.ProfesorId = new SelectList(db.Users, "Id", "Nombre");
+            ViewBag.UserId = new SelectList(db.Users.Where(u => profes.Contains(u.UserName)), "Id", "Nombre");
             return View();
         }
 
@@ -105,27 +110,28 @@ namespace AppGestionEMS.Controllers
         }
 
         // GET: AsignacionDocentes/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int? curso, int? grupo, string user)
         {
-            if (id == null)
+            if (curso == null || grupo == null || user == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AsignacionDocente asignacionDocente = db.AsignacionDocentes.Find(id);
-            if (asignacionDocente == null)
+            AsignacionDocente asignacionDocentes = db.AsignacionDocentes.Find(user, curso, grupo);
+            if (asignacionDocentes == null)
             {
                 return HttpNotFound();
             }
-            return View(asignacionDocente);
+            return View(asignacionDocentes);
         }
+
 
         // POST: AsignacionDocentes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int curso, int grupo, string user)
         {
-            AsignacionDocente asignacionDocente = db.AsignacionDocentes.Find(id);
-            db.AsignacionDocentes.Remove(asignacionDocente);
+            AsignacionDocente asignacionDocentes = db.AsignacionDocentes.Find(user, curso, grupo);
+            db.AsignacionDocentes.Remove(asignacionDocentes);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
