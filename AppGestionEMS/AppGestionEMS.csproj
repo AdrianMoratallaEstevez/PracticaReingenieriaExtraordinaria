@@ -170,10 +170,12 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AsignacionDocentesController.cs" />
     <Compile Include="Controllers\CursosController.cs" />
+    <Compile Include="Controllers\EvaluacionesController.cs" />
     <Compile Include="Controllers\GruposController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MatriculasController.cs" />
+    <Compile Include="Controllers\MisEvaluacionesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -193,10 +195,15 @@
     <Compile Include="Migrations\202205211843241_AñadeMatricula.Designer.cs">
       <DependentUpon>202205211843241_AñadeMatricula.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205220926297_AñadeEvaluaciones.cs" />
+    <Compile Include="Migrations\202205220926297_AñadeEvaluaciones.Designer.cs">
+      <DependentUpon>202205220926297_AñadeEvaluaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AsignacionDocente.cs" />
     <Compile Include="Models\Cursos.cs" />
+    <Compile Include="Models\Evaluaciones.cs" />
     <Compile Include="Models\Grupo.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -285,6 +292,13 @@
     <Content Include="Views\Matriculas\Details.cshtml" />
     <Content Include="Views\Matriculas\Edit.cshtml" />
     <Content Include="Views\Matriculas\Index.cshtml" />
+    <Content Include="Views\Evaluaciones\Create.cshtml" />
+    <Content Include="Views\Evaluaciones\Delete.cshtml" />
+    <Content Include="Views\Evaluaciones\Details.cshtml" />
+    <Content Include="Views\Evaluaciones\Edit.cshtml" />
+    <Content Include="Views\Evaluaciones\Index.cshtml" />
+    <Content Include="Views\MisEvaluaciones\Details.cshtml" />
+    <Content Include="Views\MisEvaluaciones\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -314,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205211843241_AñadeMatricula.resx">
       <DependentUpon>202205211843241_AñadeMatricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205220926297_AñadeEvaluaciones.resx">
+      <DependentUpon>202205220926297_AñadeEvaluaciones.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

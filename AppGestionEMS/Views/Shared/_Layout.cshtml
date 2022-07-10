@@ -23,11 +23,20 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    @if(User.IsInRole("jefedpto")){
-                    <li>@Html.ActionLink("Cursos", "Index", "Cursos")</li>
-                    <li>@Html.ActionLink("Grupos", "Index", "Grupos")</li>
-                    <li>@Html.ActionLink("Asignacion Docente", "Index", "AsignacionDocentes")</li>
-                    <li>@Html.ActionLink("Matriculas", "Index", "Matriculas")</li>
+                    @if (User.IsInRole("jefedpto"))
+                    {
+                        <li>@Html.ActionLink("Cursos", "Index", "Cursos")</li>
+                        <li>@Html.ActionLink("Grupos", "Index", "Grupos")</li>
+                        <li>@Html.ActionLink("Asignacion Docente", "Index", "AsignacionDocentes")</li>
+                        <li>@Html.ActionLink("Matriculas", "Index", "Matriculas")</li>
+                    }
+                    @if (User.IsInRole("profesor"))
+                    {
+                        <li>@Html.ActionLink("Evaluaciones", "Index", "Evaluaciones")</li>
+                    }
+                    @if (User.IsInRole("alumno"))
+                    {
+                        <li>@Html.ActionLink("Mis Evaluaciones", "Index", "MisEvaluaciones")</li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")
